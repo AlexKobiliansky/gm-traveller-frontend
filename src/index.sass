@@ -38,5 +38,35 @@ label
 .date
   font-size: 12px
 
+form
+  width: 250px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  label
+    margin-bottom: 8px
+  input, textarea
+    border: none
+    border-bottom: 1px solid grey
+    margin-bottom: 10px
+    outline: none
+    padding: 5px
+    font-size: 12px
+
+select
+  margin-bottom: 10px
+  outline: none
+
+.submitButton
+  border: none
+  padding: 5px
+  border-radius: 5px
+  outline: none
+  color: #fff
+  background-color: red
+  cursor: pointer
+  transition: all .3s ease
+  &:hover
+    background-color: darken(red, 10%)
 
 
