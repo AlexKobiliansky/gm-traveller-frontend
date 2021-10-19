@@ -1,5 +1,6 @@
 *
   margin: 0
+  box-sizing: border-box
 
 body
   margin: 0
@@ -68,5 +69,83 @@ select
   transition: all .3s ease
   &:hover
     background-color: darken(red, 10%)
+
+.button
+  border: none
+  padding: 8px 12px
+  border-radius: 5px
+  outline: none
+  color: #fff
+  cursor: pointer
+  transition: all .3s ease
+  letter-spacing: 0.05em
+  margin-right: 8px
+  &-logout
+    background-color: red
+    &:hover
+      background-color: darken(red, 10%)
+  &-login
+    background-color: green
+    &:hover
+      background-color: darken(green, 10%)
+  &-register
+    background-color: blue
+    &:hover
+      background-color: darken(blue, 10%)
+
+.buttons-container
+  position: fixed
+  left: 10px
+  top: 10px
+
+
+.enteringContainer
+  width: 300px
+  padding: 20px
+  border-radius: 10px
+  background-color: #fff
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  form
+    width: auto
+  input
+    width: 100%
+  button
+    font-size: 14px
+    padding: 7px 12px
+    border-radius: 5px
+    outline: none
+    border: none
+    cursor: pointer
+    background-color: lightseagreen
+    color: #fff
+    letter-spacing: 0.01em
+    text-transform: uppercase
+    transition: all .3s ease
+    &:hover
+      background-color: darken(lightseagreen, 15%)
+  h2
+    font-weight: 500
+    text-align: center
+    margin-bottom: 12px
+  .message
+    text-align: center
+    font-size: 12px
+    margin-top: 12px
+  .error
+    color: red
+  .success
+    color: green
+
+.closeEnteringForm
+  position: absolute
+  top: 5px
+  right: 5px
+  cursor: pointer
+  &:hover
+    color: grey
+
 
 
