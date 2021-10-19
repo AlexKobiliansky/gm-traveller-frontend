@@ -47,6 +47,16 @@ function App() {
     setNewPlace({lat, long});
   }
 
+  const handleOpenLogin = () => {
+    setShowLogin(true);
+    setShowRegister(false);
+  }
+
+  const handleOpenRegister = () => {
+    setShowLogin(false);
+    setShowRegister(true);
+  }
+
   const handleSubmit = async e => {
     e.preventDefault();
     const newPin = {
@@ -89,6 +99,7 @@ function App() {
               longitude={pin.long}
               offsetTop={-10}
               offsetLeft={-10}
+              className="pinMarker"
             >
               <Room
                 style={{color: currentUser === pin.username ? 'green' : 'blue', cursor: 'pointer'}}
@@ -103,6 +114,7 @@ function App() {
               closeOnClick={false}
               anchor="right"
               onClose={() => setCurrentPlaceId(null)}
+              className="pinDetails"
             >
               <div className="card">
                 <label>Place</label>
@@ -162,8 +174,8 @@ function App() {
           {currentUser
             ? <button className={'button button-logout'} onClick={handleLogout}>Logout</button>
             : <>
-              <button className={'button button-login'} onClick={() => setShowLogin(true)}>Login</button>
-              <button className={'button button-register'} onClick={() => setShowRegister(true)}>Register</button>
+              <button className={'button button-login'} onClick={handleOpenLogin}>Login</button>
+              <button className={'button button-register'} onClick={handleOpenRegister}>Register</button>
             </>
           }
         </div>
