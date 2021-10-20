@@ -44,7 +44,9 @@ function App() {
 
   const handleAddClick = (e) => {
     const [long, lat] = e.lngLat;
-    setNewPlace({lat, long});
+    if (currentUser) {
+      setNewPlace({lat, long});
+    }
   }
 
   const handleOpenLogin = () => {
@@ -67,7 +69,7 @@ function App() {
       lat: newPlace.lat,
       long: newPlace.long,
     }
-    
+
     try {
       const res = await axios.post('/pins', newPin);
       setPins([...pins, res.data]);
@@ -123,7 +125,7 @@ function App() {
                 <p className="description">{pin.description}</p>
                 <label>Rating</label>
                 <div className="stars">
-                  {Array.from(Array(pin.rating), (_, i) => <Star className="star" key={i} />)}
+                  {Array.from(Array(pin.rating), (_, i) => <Star className="star" key={i}/>)}
                 </div>
 
                 <label>Information</label>
@@ -132,7 +134,7 @@ function App() {
               </div>
             </Popup>}
           </React.Fragment>
-            ))}
+        ))}
 
         {newPlace && (
           <Popup
@@ -165,7 +167,7 @@ function App() {
                   <option value="4">4</option>
                   <option value="5">5</option>
                 </select>
-                <button className="submitButton" type="submit" >Add place</button>
+                <button className="submitButton" type="submit">Add place</button>
               </form>
             </div>
           </Popup>
